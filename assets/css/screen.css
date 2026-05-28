@@ -977,3 +977,120 @@ hr {
 .gh-copyright {
     font-size: 1.4rem;
 }
+
+/* Blog list feed
+/* ---------------------------------------------------------- */
+
+.has-blog-list-feed .gh-card {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.has-blog-list-feed .gh-card + .gh-card {
+    margin-top: 0;
+}
+
+.has-blog-list-feed .gh-card-link {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: clamp(1.6rem, 1.2rem + 1.25vw, 2.4rem);
+    align-items: flex-start;
+}
+
+.has-blog-list-feed.has-feed-image-left .gh-card-link {
+    flex-direction: row;
+}
+
+.has-blog-list-feed .gh-card-image {
+    position: relative;
+    flex: 0 0 140px;
+    width: 140px;
+    height: 94px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.has-blog-list-feed .no-image .gh-card-image {
+    display: none;
+}
+
+.has-blog-list-feed .gh-card-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.has-blog-list-feed .gh-card-wrapper {
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-start;
+}
+
+.has-blog-list-feed .gh-card-title {
+    font-size: clamp(1.7rem, 0.36vw + 1.53rem, 2.1rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.has-blog-list-feed .gh-card-meta {
+    margin-top: 8px;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 480px) {
+    .has-blog-list-feed .gh-card-image {
+        flex: 0 0 88px;
+        width: 88px;
+        height: 60px;
+    }
+}
+
+/* Coder / mono aesthetic
+/* ---------------------------------------------------------- */
+
+/* Blinking cursor after hero heading */
+.has-mono-font .gh-about-primary::after {
+    content: "_";
+    margin-left: 2px;
+    opacity: 0.5;
+    animation: gh-cursor-blink 1.1s step-end infinite;
+}
+
+@keyframes gh-cursor-blink {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0; }
+}
+
+/* Comment-style prefix on dates */
+.has-mono-font .gh-card-date::before,
+.has-mono-font .gh-article-date::before {
+    content: "// ";
+    opacity: 0.35;
+}
+
+/* Code block accent bar */
+.has-mono-font .gh-content pre {
+    border-left: 3px solid #4ec9b0;
+}
+
+/* Heading underline in content */
+.has-mono-font .gh-content h2,
+.has-mono-font .gh-content h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Monospace meta and tags */
+.has-mono-font .gh-card-meta,
+.has-mono-font .gh-article-tag {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    letter-spacing: 0;
+}
+
+.has-mono-font .gh-article-tag {
+    border-radius: 2px;
+}

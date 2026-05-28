@@ -87,8 +87,15 @@
             },
             "post_feed_layout": {
                 "type": "select",
-                "options": ["Classic", "Typographic", "Parallax"],
+                "options": ["Classic", "Typographic", "Parallax", "Blog list"],
                 "default": "Classic",
+                "group": "homepage"
+            },
+            "feed_image_side": {
+                "type": "select",
+                "options": ["Right", "Left"],
+                "default": "Right",
+                "description": "Thumbnail position for the Blog list feed layout.",
                 "group": "homepage"
             }
         }
